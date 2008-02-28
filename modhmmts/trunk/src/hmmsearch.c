@@ -619,7 +619,7 @@ int main(int argc, char* argv[])
 	    msa_baum_welch_dirichlet_multi(&retrain_hmm, msa_seq_infop, 1, NO, use_gap_shares, use_lead_columns, use_labels,
 					   NO, NO, normalize, scoring_method,
 					   NO, multi_scoring_method, aa_freqs, aa_freqs_2, aa_freqs_3, aa_freqs_4,
-					   NO, YES, NO);
+					   NO, NO, NO);
 	  }
 	  if(verbose == YES) {
 	    printf("retraining done\n");
