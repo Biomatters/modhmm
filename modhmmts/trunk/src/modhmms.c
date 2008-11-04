@@ -6,7 +6,7 @@
 
 #include "structs.h"
 #include "funcs.h"
-#include "cmdline_hmmsearch.h"
+#include "cmdline_modhmms.h"
 
 #define SAVE_HMM
 

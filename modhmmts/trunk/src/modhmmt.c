@@ -3,7 +3,7 @@
 
 #include "structs.h"
 #include "funcs.h"
-#include "cmdline_hmmtrain.h"
+#include "cmdline_modhmmt.h"
 
 #define MAX_LINE 4000
 #define MAX_SEQS 4000

@@ -73,14 +73,6 @@ IF(WITH_LIBXML)
  ENDIF(STATIC)
 ENDIF(WITH_LIBXML)
 
-
-SET(FNJ_SRCS programs/fnj/main.cpp
-programs/fnj/DataInputStream.cpp
-programs/fnj/DataOutputStream.cpp
-programs/fnj/XmlOutputStream.cpp
-${CMAKE_CURRENT_BINARY_DIR}/programs/fnj/gengetopt/fnj_gengetopt.c 
-)
-
 IF(WITH_LIBXML)
  IF(STATIC)
   SET(FNJ_XML_SRCS programs/fnj/XmlInputStream.cpp  "${CMAKE_CURRENT_BINARY_DIR}/external/install/include/libxml2/libxml/xmlreader.h" )
@@ -104,9 +96,9 @@ SET (SCORING_C_FILES core_algorithms_multialpha.c
                      std_calculation_funcs.c)
 
 add_executable (modhmms modhmms.c cmdline_modhmms.c ${GENERAL_C_FILES} ${SCORING_C_FILES} training_algorithms_multialpha.c)
-add_executable (modhmmt  modhmmt.c modhmmt_cmdline.c ${GENERAL_C_FILES} ${SCORING_C_FILES} training_algorithms_multialpha.c)
+add_executable (modhmmt  modhmmt.c cmdline_modhmmt.c ${GENERAL_C_FILES} ${SCORING_C_FILES} training_algorithms_multialpha.c)
 add_executable (modseqalign modseqalign.c cmdline_modseqalign.c ${GENERAL_C_FILES} ${SCORING_C_FILES})
-add_executable (add_alphabet add_alphabet.c cmdline_add_alphabet.c programs/add_alphabet/main.c ${GENERAL_C_FILES})
+add_executable (add_alphabet add_alphabet.c cmdline_add_alphabet.c ${GENERAL_C_FILES})
 
 FOREACH(i ${PROGRAMS} )
  IF(STATIC)
