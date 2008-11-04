@@ -1,5 +1,5 @@
 package "modhmms"
-version "0.92"
+version "@PACKAGE_VERSION@"
 purpose "score sequences on hidden markov models"
 
 #compulsory options

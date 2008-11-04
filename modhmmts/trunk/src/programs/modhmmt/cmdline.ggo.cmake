@@ -1,5 +1,5 @@
 package "modhmmt"
-version "0.92"
+version "@PACKAGE_VERSION@"
 purpose "train a hidden markov model"
 
 #compulsory options

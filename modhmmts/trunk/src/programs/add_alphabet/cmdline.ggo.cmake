@@ -1,5 +1,5 @@
 package "add_alphabet"
-version "0.92"
+version "@PACKAGE_VERSION@"
 purpose "add alphabet with predefined emission probabilities to a given model file"
 
 option "hmminfile" i "modelfile (in .hmg format)" string typestr="filename" yes

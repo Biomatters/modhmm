@@ -1,5 +1,5 @@
 package "modseqalign"
-version "0.92"
+version "@PACKAGE_VERSION@"
 purpose "align 2 sequences to each other using their most likely state path through a given HMM"
 
 #compulsory options
