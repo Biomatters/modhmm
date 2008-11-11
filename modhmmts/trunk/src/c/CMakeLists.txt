@@ -1,3 +1,9 @@
+IF(UNIX)	
+	IF(CMAKE_COMPILER_IS_GNUCC)
+		SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w")
+	ENDIF(CMAKE_COMPILER_IS_GNUCC)
+ENDIF(UNIX)
+
 FIND_PROGRAM(GENGETOPT gengetopt)
 IF(NOT GENGETOPT)
  SET(GENGETOPTDEP "${CMAKE_CURRENT_BINARY_DIR}/external/install/bin/gengetopt"  )
@@ -95,21 +101,24 @@ SET (GENERAL_C_FILES readhmm.c
 SET (SCORING_C_FILES core_algorithms_multialpha.c
                      std_calculation_funcs.c)
 
-add_executable (modhmms modhmms.c cmdline_modhmms.c ${GENERAL_C_FILES} ${SCORING_C_FILES} training_algorithms_multialpha.c)
-add_executable (modhmmt  modhmmt.c cmdline_modhmmt.c ${GENERAL_C_FILES} ${SCORING_C_FILES} training_algorithms_multialpha.c)
-add_executable (modseqalign modseqalign.c cmdline_modseqalign.c ${GENERAL_C_FILES} ${SCORING_C_FILES})
-add_executable (add_alphabet add_alphabet.c cmdline_add_alphabet.c ${GENERAL_C_FILES})
+ADD_LIBRARY(generalc STATIC ${GENERAL_C_FILES})
+ADD_LIBRARY(scoring STATIC ${SCORING_C_FILES})
+
+add_executable (modhmms modhmms.c cmdline_modhmms.c  training_algorithms_multialpha.c)
+add_executable (modhmmt  modhmmt.c cmdline_modhmmt.c training_algorithms_multialpha.c)
+add_executable (modseqalign modseqalign.c cmdline_modseqalign.c )
+add_executable (add_alphabet add_alphabet.c cmdline_add_alphabet.c)
 
 FOREACH(i ${PROGRAMS} )
  IF(STATIC)
   set_property(TARGET ${i} PROPERTY LINK_SEARCH_END_STATIC ON )
  ENDIF(STATIC)
 # ${LIBXML2_LIBRARIES}  ${ZLIB_LIBRARY}
- target_link_libraries (${i} m)
+ target_link_libraries (${i} generalc m)
 ENDFOREACH(i)
+ target_link_libraries (modhmms scoring)
+ target_link_libraries (modhmmt scoring)
+ target_link_libraries (modseqalign scoring)
+
 
 install(TARGETS ${PROGRAMS} DESTINATION bin)
-
-
-
-
