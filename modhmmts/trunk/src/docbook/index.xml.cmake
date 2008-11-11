@@ -110,7 +110,7 @@ by a blank row. Each module section is ended by a blank row and a row of '-'.
 
 <variablelist><title>Description of modules variables</title>
 <varlistentry><term>Module</term><listitem><para>the name of the module
-</para></listitem></varlistentry><varlistentry><term>Type</term><listitem><para>the type of the module ( see <xref linkend="architecture_modhmmc_modules"/> )
+</para></listitem></varlistentry><varlistentry><term>Type</term><listitem><para>the type of the module ( see <xref linkend="modules"/> )
 </para></listitem></varlistentry><varlistentry><term>NrVertices</term><listitem><para>number of states in this module
 </para></listitem></varlistentry><varlistentry><term>Emission prior file</term><listitem><para>possible emission prior file associated with this module, 'null' means that no file is associated 
 </para></listitem></varlistentry><varlistentry><term>Transition prior file</term><listitem><para>possible transition prior file associated with this module, 'null' means that no file is associated 
@@ -2758,11 +2758,7 @@ originally is
       </mml:msub>
       <mml:mo  stretchy="false">(</mml:mo>
 
-        <mml:mi>i</mml:mi>
-   <mml:mo form="infix">,</mml:mo>
-
-
-        <mml:mi>j</mml:mi>
+        <mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi>
 
       <mml:mo  stretchy="false">)</mml:mo>
 
@@ -2836,11 +2832,7 @@ by the user for the  <inlineequation>
       </mml:msub>
       <mml:mo  stretchy="false">(</mml:mo>
 
-        <mml:mi>i</mml:mi>
-   <mml:mo form="infix">,</mml:mo>
-
-
-        <mml:mi>j</mml:mi>
+        <mml:mi>i</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi>
 
       <mml:mo  stretchy="false">)</mml:mo>
 
@@ -2960,13 +2952,7 @@ The sixth implementation of <inlineequation>
         <mml:mi>p</mml:mi>
         <mml:mi>rel</mml:mi>
       </mml:msub>
-      <mml:mo  stretchy="false">(</mml:mo>
-
-        <mml:mi>query</mml:mi>
-   <mml:mo form="infix">,</mml:mo>
-
-
-        <mml:mi>j</mml:mi>
+      <mml:mo  stretchy="false">(</mml:mo>        <mml:mi>query</mml:mi><mml:mo>,</mml:mo><mml:mi>j</mml:mi>
 
       <mml:mo  stretchy="false">)</mml:mo>
 
