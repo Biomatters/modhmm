@@ -920,17 +920,6 @@ is used. This silent end-state has a transition to an insert state for the latte
 module.
 Transition parameters are set automatically to default values at this stage. For a profile HMM, they may be updated
 using the <application>opt_prfhmm</application>  program.
-The profile9 module is equal to the standard profile-HMM architecture.
-The input parameter specifies the length of the module, i.e. the number of match states.
-Incoming transitions connect to the an initial silent state. From this state there are transitions to an pre-model insert
-state and to the first match and delete states of the model. For the purpose of local alignment with respect to
-the model there are also transitions to the following match states. These may be set to zero when global alignment is
-prefered. From the last match and delete states there are transitions to a silent state at the end. There are also transintions
-from the previous match states to this state for the purpose of local alignments. These are set to zero when global alignment
-is used. This silent end-state has a transition to an insert state for the latter unaligned part of a sequence and to the next
-module.
-Transition parameters are set automatically to default values at this stage. For a profile HMM, they may be updated
-using the <application>opt_prfhmm</application> program.
 </para>
 </sect5>
 
