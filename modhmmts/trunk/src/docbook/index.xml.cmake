@@ -1986,7 +1986,7 @@ The example file <ulink url="example_files/file.modhmm-alphabet">file.modhmm-alp
 
 
 There are 7 different ways to calculate the score (probability) for a multiple sequence alignment column to be emitted
-in in a certain state. Let us call this score  
+in a certain state. Let us call this score  
 <inlineequation>  
 <mml:math>
 <mml:mrow>
