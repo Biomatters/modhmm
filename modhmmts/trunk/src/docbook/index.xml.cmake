@@ -1738,8 +1738,8 @@ fourth line is the number of the replacement letters.
 Next, depending on the number in the fourth line, there are a number of lines with the specification of the replacement letters for that alphabet.
 Then the next line contains the number giving the size of the second alphabet if it exists, etc.]]></para><para><![CDATA[
 
-The specification lines have the following layout: $<$alphabet letter$>$ = $<$substitution$>$ $<$substitution$>$
-$<$substitution$>$ ... . The substitutions have the form: $<$replacement letter$>$:$<$probabilityshare$>$.
+The specification lines have the following layout: <alphabet letter> = <substitution> <substitution>
+<substitution> ... . The substitutions have the form: <replacement letter>:<probabilityshare>.
 ]]>
 
 <example id="file.modhmm-replacement-letter"><title>file.modhmm-replacement-letter, an example file in Modhmm replacement letter format</title><para>
@@ -1769,8 +1769,8 @@ The <emphasis>Modhmm subst mtx format</emphasis> specifies a substitution matrix
 All lines beginning with '#' (as the very first character), and all
 empty lines are disregarded. Apart from this, the first line must be a number giving the size of the alphabet of the associated hmm.
 The second line must be the characters of the alphabet, separated by and ending with ';'.
-The following lines specify the matrix itself. Each line has the following layout: $<$alphabet letter$>$ = $<$score alphabet letter 1$>$
-$<$score alphabet letter 2$>$ ... .
+The following lines specify the matrix itself. Each line has the following layout: <alphabet letter> = <score alphabet letter 1>
+<score alphabet letter 2> ... .
 There is one line for each letter of the alphabet, not in any particular order, and one line at the end that describes
 how to interpret letters in the sequences not in the alphabet. This line is only used under certain circumstances in the
 SMDP and SMDPP scoring methods. There is one column for each letter of the alphabet and the columns must be in the
