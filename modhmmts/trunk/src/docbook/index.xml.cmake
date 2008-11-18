@@ -1642,7 +1642,7 @@ The multiple alphabet version of this format has the same basic structure as the
 consists of 2-4 subsequences which begin and end with '#' and '+' respectively. The number of '#' characters in the
 beginning is used to indicate which alphabet a subsequence
 belongs to. The subsequences must be in numerical order, and they must be of equal lengths. It is also possible to
-mix discrete and continuous alphabets. This is simply done by using the indicators '#'- '+' and '$&lt;$' and '$&gt;$' respectively.
+mix discrete and continuous alphabets. This is simply done by using the indicators '#'- '+' and '&lt;' and '&gt;' respectively.
 
 
 
