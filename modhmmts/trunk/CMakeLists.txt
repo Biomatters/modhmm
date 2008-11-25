@@ -16,6 +16,7 @@ OPTION(STATIC "build a static binaries. This is mainly intended for the win32-pa
 
 add_subdirectory(src/c)
 add_subdirectory(src/docbook)
+add_subdirectory(src/data)
 
 
 # after running cmake, we can generate source tarballs ( in tar.gz and zip ) by running
