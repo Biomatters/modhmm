@@ -1,7 +1,0 @@
-To install cmake is needed. Cmake can be downloaded from http://www.cmake.org/HTML/Download.html.
-
-For installation of modhmmts:
-cmake -D CMAKE_INSTALL_PREFIX=/my_install_dir modhmmts_dir
-make
-make install
-
