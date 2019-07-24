@@ -149,8 +149,8 @@ void get_viterbi_path_multi(struct viterbi_s *cur, struct hmm_multi_s *hmmp,
 			    struct viterbi_s *viterbi_mtxp, int row, int row_size, int *path, int *ip);
 int get_viterbi_path_length_multi(struct viterbi_s *cur, struct hmm_multi_s *hmmp,
 				  struct viterbi_s *viterbi_mtxp, int row, int row_size, int *ip);
-void itoa(char* s, int nr);
-void ftoa(char* s, long double nr, int prec);
+void itoa32(char* s, int nr);
+void ftoa32(char* s, long double nr, int prec);
 int read_subst_matrix(long double **mtx, FILE *substmtxfile);
 int read_subst_matrix_multi(long double **mtxpp, long double **mtxpp_2, long double **mtxpp_3, long double **mtxpp_4, FILE *substmtxfile);
 int read_prior_file(struct emission_dirichlet_s *em_di, struct hmm_s *hmmp, FILE *priorfile);
@@ -174,7 +174,7 @@ int replacement_letter(struct letter_s *cur_letterp, struct replacement_letter_s
 void get_labels_multi(FILE *labelfile, struct sequences_multi_s *seq_infop, struct hmm_multi_s *hmmp, int seq_nr);
 void get_msa_labels_multi(FILE *labelfile, struct msa_sequences_multi_s *msa_seq_infop, struct hmm_multi_s *hmmp);
 void get_msa_labels_all_columns_multi(FILE *labelfile, struct msa_sequences_multi_s *msa_seq_infop, struct hmm_multi_s *hmmp);
-int update_shares_prior_multi(struct emission_dirichlet_s *em_di, struct hmm_multi_s *hmmp,
+void update_shares_prior_multi(struct emission_dirichlet_s *em_di, struct hmm_multi_s *hmmp,
 			struct msa_sequences_multi_s *msa_seq_infop, int l, int alphabet);
 int replacement_letter_multi(struct letter_s *cur_letterp, struct replacement_letter_multi_s *replacement_letters, 
 		       struct msa_sequences_multi_s *msa_seq_infop, struct hmm_multi_s *hmmp, int seq_pos, int alphabet);

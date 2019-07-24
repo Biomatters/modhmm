@@ -1796,70 +1796,13 @@ int get_best_reliability_score(long double reliability_score_1, long double reli
 
 
 
-void itoa(char* s, int nr) {
-  int dec, sign;
-  char temp[30];
-  
-  strcpy(temp, fcvt(nr, 0, &dec, &sign));
-  if(sign == POS) {
-    strncpy(s, temp, dec);
-    s[dec] = '\0';
-  }
-  else {
-    s[0] = '-';
-    strncpy(s+1, temp, dec);
-    s[dec+1] = '\0';
-  }
-
-
+void itoa32(char* s, int nr) {
+  snprintf(s, 32, "%d", nr);
 } 
 
-void ftoa(char* s, long double nr, int prec) {
+void ftoa32(char* s, long double nr, int prec) {
   int dec, sign;
-  char temp[30];
-  int i, pos;
-
-  strcpy(temp, fcvt(nr, prec, &dec, &sign));
-  if(sign == POS) {
-    if(dec <= 0) {
-      s[0] = '0';
-      s[1] = '.';
-      pos = 2;
-      for(i = 0; i > dec; i--) {
-	s[pos] = '0';
-	pos++;
-      } 
-      strncpy(s+pos, temp, prec);
-      s[pos+prec] = '\0';
-    }
-    else {
-      strncpy(s, temp, dec);
-      s[dec] = '.';
-      strncpy(s+dec+1, temp+dec, prec);
-      s[dec+1+prec] = '\0';
-    }
-  }
-  else {
-     if(dec <= 0) {
-      s[0] = '-';
-      s[1] = '0';
-      s[2] = '.';
-      pos = 3;
-      for(i = 0; i > dec; i--) {
-	s[pos] = '0';
-	pos++;
-      }
-      strncpy(s+pos, temp, prec);
-      s[pos+prec] = '\0';
-    }
-    else {
-      s[0] = '-';
-      strncpy(s+1, temp, dec);
-      s[dec+1] = '.';
-      strncpy(s+dec+2, temp+dec, prec);
-      s[dec+2+prec] = '\0';
-    }
-  }
+  snprintf(s, 32, "%.*Lf", prec, nr);
 }
 
 
@@ -2547,7 +2490,7 @@ void get_msa_labels_all_columns_multi(FILE *labelfile, struct msa_sequences_mult
 }
 
 
-int update_shares_prior_multi(struct emission_dirichlet_s *em_di, struct hmm_multi_s *hmmp,
+void update_shares_prior_multi(struct emission_dirichlet_s *em_di, struct hmm_multi_s *hmmp,
 			struct msa_sequences_multi_s *msa_seq_infop, int l, int alphabet)
 {
   int nr_components, comps, a_index; 

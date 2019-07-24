@@ -64,7 +64,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 
   /* nr of alphabets */
   strcpy(s, "NR OF ALPHABETS: ");
-  itoa(nr, hmmp->nr_alphabets); 
+  itoa32(nr, hmmp->nr_alphabets); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -82,7 +82,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* alphabet length */
   strcpy(s, "ALPHABET LENGTH 1: ");
-  itoa(nr, hmmp->a_size); 
+  itoa32(nr, hmmp->a_size); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -101,7 +101,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
     /* alphabet length */
     strcpy(s, "ALPHABET LENGTH 2: ");
-    itoa(nr, hmmp->a_size_2); 
+    itoa32(nr, hmmp->a_size_2); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -121,7 +121,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
     /* alphabet length */
     strcpy(s, "ALPHABET LENGTH 3: ");
-    itoa(nr, hmmp->a_size_3); 
+    itoa32(nr, hmmp->a_size_3); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -141,7 +141,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
     /* alphabet length */
     strcpy(s, "ALPHABET LENGTH 4: ");
-    itoa(nr, hmmp->a_size_4); 
+    itoa32(nr, hmmp->a_size_4); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -152,7 +152,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   
   /* nr of modules */
   strcpy(s, "NR OF MODULES: ");
-  itoa(nr, hmmp->nr_m); 
+  itoa32(nr, hmmp->nr_m); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -161,7 +161,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* nr of vertices */
   strcpy(s, "NR OF VERTICES: ");
-  itoa(nr, hmmp->nr_v); 
+  itoa32(nr, hmmp->nr_v); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -170,7 +170,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* nr of TRANSITIONS */
   strcpy(s, "NR OF TRANSITIONS: ");
-  itoa(nr, hmmp->nr_t); 
+  itoa32(nr, hmmp->nr_t); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -179,7 +179,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* nr of DISTRIBUTION GROUPS */
   strcpy(s, "NR OF DISTRIBUTION GROUPS: ");
-  itoa(nr, hmmp->nr_d); 
+  itoa32(nr, hmmp->nr_d); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -188,7 +188,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* nr of TRANS TIE GROUPS */
   strcpy(s, "NR OF TRANSITION TIE GROUPS: ");
-  itoa(nr, hmmp->nr_ttg); 
+  itoa32(nr, hmmp->nr_ttg); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -197,7 +197,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
 #endif
   /* nr of PRIOR FILES */
   strcpy(s, "NR OF EMISSION PRIORFILES 1: ");
-  itoa(nr, hmmp->nr_ed); 
+  itoa32(nr, hmmp->nr_ed); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -220,7 +220,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   if(hmmp->nr_alphabets > 1) {
     /* nr of PRIOR FILES */
     strcpy(s, "NR OF EMISSION PRIORFILES 2: ");
-    itoa(nr, hmmp->nr_ed_2); 
+    itoa32(nr, hmmp->nr_ed_2); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -244,7 +244,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   if(hmmp->nr_alphabets > 2) {
     /* nr of PRIOR FILES */
     strcpy(s, "NR OF EMISSION PRIORFILES 3: ");
-    itoa(nr, hmmp->nr_ed_3); 
+    itoa32(nr, hmmp->nr_ed_3); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -268,7 +268,7 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   if(hmmp->nr_alphabets > 3) {
     /* nr of PRIOR FILES */
     strcpy(s, "NR OF EMISSION PRIORFILES 4: ");
-    itoa(nr, hmmp->nr_ed_4); 
+    itoa32(nr, hmmp->nr_ed_4); 
     if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
       perror("");
     }
@@ -353,11 +353,11 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   j = 0;
   for(i = 0; i < hmmp->nr_d; i++) {
     strcpy(s, "Group ");
-    itoa(nr, i+1);
+    itoa32(nr, i+1);
     strcat(s, nr);
     strcat(s, ": ");
     while((t1 = *(hmmp->distrib_groups+j)) != END) {
-      itoa(nr, t1);
+      itoa32(nr, t1);
       strcat(s, nr);
       strcat(s, " ");
       j++;
@@ -394,16 +394,16 @@ savehmm_multialpha(FILE *outfile, struct hmm_multi_s *hmmp)
   j = 0;
   for(i = 0; i < hmmp->nr_ttg; i++) {
     strcpy(s, "Tie ");
-    itoa(nr, i+1);
+    itoa32(nr, i+1);
     strcat(s, nr);
     strcat(s, ": ");
     while(((hmmp->trans_tie_groups)+j)->from_v != END) {
       t1 = ((hmmp->trans_tie_groups)+j)->from_v;
-      itoa(nr, t1);
+      itoa32(nr, t1);
       strcat(s, nr);
       strcat(s, "->");
       t1 = ((hmmp->trans_tie_groups)+j)->to_v;
-      itoa(nr, t1);
+      itoa32(nr, t1);
       strcat(s, nr);
       strcat(s, " ");
       j++;
@@ -468,7 +468,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 #endif
   /* nr of vertices */
   strcpy(s, "NrVertices: ");
-  itoa(nr, modulep->nr_v); 
+  itoa32(nr, modulep->nr_v); 
   if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
     perror("");
   }
@@ -535,7 +535,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
     /* Vertex nr */
     cur_v = *(modulep->vertices + i);
     strcpy(s, "Vertex ");
-    itoa(nr, cur_v); 
+    itoa32(nr, cur_v); 
     if(fputs(strcat(strcat(s, nr), ":\n"), outfile) == EOF) {
       perror("");
     }
@@ -569,7 +569,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 
     /* Transition prior scaler */
     strcpy(s, "Transition prior scaler: ");
-    ftoa(nr, *(hmmp->vertex_trans_prior_scalers + cur_v), 6);
+    ftoa32(nr, *(hmmp->vertex_trans_prior_scalers + cur_v), 6);
     strcat(s, nr);
     strcat(s, "\n");
     if(fputs(s, outfile) == EOF) {
@@ -578,7 +578,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
     
     /* Emission prior scaler */
     strcpy(s, "Emission prior scaler 1: ");
-    ftoa(nr, *(hmmp->vertex_emiss_prior_scalers + cur_v), 6);
+    ftoa32(nr, *(hmmp->vertex_emiss_prior_scalers + cur_v), 6);
     strcat(s, nr);
     strcat(s, "\n");
     if(fputs(s, outfile) == EOF) {
@@ -587,7 +587,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
     
     if(hmmp->nr_alphabets > 1) {
       strcpy(s, "Emission prior scaler 2: ");
-      ftoa(nr, *(hmmp->vertex_emiss_prior_scalers_2 + cur_v), 6);
+      ftoa32(nr, *(hmmp->vertex_emiss_prior_scalers_2 + cur_v), 6);
       strcat(s, nr);
       strcat(s, "\n");
       if(fputs(s, outfile) == EOF) {
@@ -597,7 +597,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 
     if(hmmp->nr_alphabets > 2) {
       strcpy(s, "Emission prior scaler 3: ");
-      ftoa(nr, *(hmmp->vertex_emiss_prior_scalers_3 + cur_v), 6);
+      ftoa32(nr, *(hmmp->vertex_emiss_prior_scalers_3 + cur_v), 6);
       strcat(s, nr);
       strcat(s, "\n");
       if(fputs(s, outfile) == EOF) {
@@ -607,7 +607,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 
     if(hmmp->nr_alphabets > 3) {
       strcpy(s, "Emission prior scaler 4: ");
-      ftoa(nr, *(hmmp->vertex_emiss_prior_scalers_4 + cur_v), 6);
+      ftoa32(nr, *(hmmp->vertex_emiss_prior_scalers_4 + cur_v), 6);
       strcat(s, nr);
       strcat(s, "\n");
       if(fputs(s, outfile) == EOF) {
@@ -624,7 +624,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 	 nr_t++;
        }
      }
-     itoa(nr, nr_t);
+     itoa32(nr, nr_t);
      if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
        perror("");
      }
@@ -637,7 +637,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
      if(*(hmmp->transitions + get_mtx_index(cur_v, hmmp->nr_v-1, hmmp->nr_v)) != 0.0) {
        nr_et++;
      }
-     itoa(nr, nr_et);
+     itoa32(nr, nr_et);
      if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
        perror("");
      }
@@ -646,7 +646,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 #endif
      /* nr emissions */
      strcpy(s, "Nr emissions 1 = ");
-     itoa(nr, hmmp->a_size);
+     itoa32(nr, hmmp->a_size);
      if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
        perror("");
      }
@@ -657,7 +657,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
      if(hmmp->nr_alphabets > 1) {
        /* nr emissions */
        strcpy(s, "Nr emissions 2 = ");
-       itoa(nr, hmmp->a_size_2);
+       itoa32(nr, hmmp->a_size_2);
        if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
 	 perror("");
        }
@@ -669,7 +669,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
      if(hmmp->nr_alphabets > 2) {
        /* nr emissions */
        strcpy(s, "Nr emissions 3 = ");
-       itoa(nr, hmmp->a_size_3);
+       itoa32(nr, hmmp->a_size_3);
        if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
 	 perror("");
        }
@@ -681,7 +681,7 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
      if(hmmp->nr_alphabets > 3) {
        /* nr emissions */
        strcpy(s, "Nr emissions 4 = ");
-       itoa(nr, hmmp->a_size_4);
+       itoa32(nr, hmmp->a_size_4);
        if(fputs(strcat(strcat(s, nr), "\n"), outfile) == EOF) {
 	 perror("");
        }
@@ -704,10 +704,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
      for(k = 0; k < hmmp->nr_v-1; k++) {
        if(*(hmmp->transitions + get_mtx_index(cur_v, k, hmmp->nr_v)) != 0.0) {
 	 strcpy(s, "\tVertex ");
-	 itoa(nr, k);
+	 itoa32(nr, k);
 	 strcat(s, nr);
 	 strcat(s, ": ");
-	 ftoa(nr, *(hmmp->transitions + get_mtx_index(cur_v, k, hmmp->nr_v)), 6);
+	 ftoa32(nr, *(hmmp->transitions + get_mtx_index(cur_v, k, hmmp->nr_v)), 6);
 	 strcat(s, nr);
 	 if(fputs(strcat(s, "\n"), outfile) == EOF) {
 	   perror("");
@@ -728,10 +728,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 #endif
      if(*(hmmp->transitions + get_mtx_index(cur_v, hmmp->nr_v-1, hmmp->nr_v)) != 0.0) {
        strcpy(s, "\tVertex ");
-       itoa(nr, hmmp->nr_v - 1);
+       itoa32(nr, hmmp->nr_v - 1);
        strcat(s, nr);
        strcat(s, ": ");
-       ftoa(nr, *(hmmp->transitions + get_mtx_index(cur_v, hmmp->nr_v-1, hmmp->nr_v)), 6);
+       ftoa32(nr, *(hmmp->transitions + get_mtx_index(cur_v, hmmp->nr_v-1, hmmp->nr_v)), 6);
        strcat(s, nr);
        if(fputs(strcat(s, "\n"), outfile) == EOF) {
 	 perror("");
@@ -763,10 +763,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
        s[m+1] = ' ';
        s[m+2] ='\0';
        if(*(hmmp->emissions + get_mtx_index(cur_v, l, hmmp->a_size)) == SILENT) {
-	 ftoa(nr, 0.0, 6);
+	 ftoa32(nr, 0.0, 6);
        }
        else {
-	 ftoa(nr, *(hmmp->emissions + get_mtx_index(cur_v, l, hmmp->a_size)), 6);
+	 ftoa32(nr, *(hmmp->emissions + get_mtx_index(cur_v, l, hmmp->a_size)), 6);
        }
        strcat(s, nr);
 #ifdef SAVE_DEBUG
@@ -813,10 +813,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 	 s[m+2] ='\0';
 	
 	 if(*(hmmp->emissions_2 + get_mtx_index(cur_v, l, hmmp->a_size_2)) == SILENT) {
-	   ftoa(nr, 0.0, 6);
+	   ftoa32(nr, 0.0, 6);
 	 }
 	 else {
-	   ftoa(nr, *(hmmp->emissions_2 + get_mtx_index(cur_v, l, hmmp->a_size_2)), 6);
+	   ftoa32(nr, *(hmmp->emissions_2 + get_mtx_index(cur_v, l, hmmp->a_size_2)), 6);
 	  
 	 }
 	 strcat(s, nr);
@@ -862,10 +862,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 	 s[m+1] = ' ';
 	 s[m+2] ='\0';
 	 if(*(hmmp->emissions_3 + get_mtx_index(cur_v, l, hmmp->a_size_3)) == SILENT) {
-	   ftoa(nr, 0.0, 6);
+	   ftoa32(nr, 0.0, 6);
 	 }
 	 else {
-	   ftoa(nr, *(hmmp->emissions_3 + get_mtx_index(cur_v, l, hmmp->a_size_3)), 6);
+	   ftoa32(nr, *(hmmp->emissions_3 + get_mtx_index(cur_v, l, hmmp->a_size_3)), 6);
 	 }
 	 strcat(s, nr);
 #ifdef SAVE_DEBUG
@@ -910,10 +910,10 @@ void savemodule_multi(FILE *outfile,struct hmm_multi_s *hmmp, struct module_mult
 	 s[m+1] = ' ';
 	 s[m+2] ='\0';
 	 if(*(hmmp->emissions_4 + get_mtx_index(cur_v, l, hmmp->a_size_4)) == SILENT) {
-	   ftoa(nr, 0.0, 6);
+	   ftoa32(nr, 0.0, 6);
 	 }
 	 else {
-	   ftoa(nr, *(hmmp->emissions_4 + get_mtx_index(cur_v, l, hmmp->a_size_4)), 6);
+	   ftoa32(nr, *(hmmp->emissions_4 + get_mtx_index(cur_v, l, hmmp->a_size_4)), 6);
 	 }
 	 strcat(s, nr);
 #ifdef SAVE_DEBUG
