@@ -9,6 +9,10 @@ make
 make install
 
 
+Note: On Windows if compiling with MinGW, you need to enable the __USE_MINGW_ANSI_STDIO macro. The following CMake command will do it:
+cmake -E env CFLAGS="-D__USE_MINGW_ANSI_STDIO" cmake -G "MSYS MAKEFILES" -DCMAKE_INSTALL_PREFIX=/my/install/dir /this/src/dir
+
+
 
 
 
